@@ -407,6 +407,7 @@ async function createPosts(posts)
 }
 
 16.
+
 async function displayPosts(posts)
 {
     let myMain = document.querySelector("main");
@@ -417,7 +418,6 @@ async function displayPosts(posts)
   
     return element;
 }
-
 
 17.
 
