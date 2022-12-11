@@ -410,14 +410,15 @@ async function createPosts(posts)
 
 async function displayPosts(posts)
 {
-    let myMain = document.querySelector("main");
-  
-    let element = (posts) ? await createPosts(posts) : document.querySelector("main p");
-  
-    myMain.append(element);
-  
-    return element;
-}
+  let main = document.querySelector("main");
+  let element;
+  if(posts != null || posts == []) //If posts exist:
+      element = await createPosts(posts);
+  else
+      element = createElemWithText("p", "main.default-text", classNameifOneNeeded);
+  main.append(element);
+  return element;
+};
 
 17.
 
