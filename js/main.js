@@ -145,7 +145,7 @@ return parentElement;
 6.
 
 function addButtonListeners() {
-        const buttons = document.querySelectorAll('main')
+        const buttons = document.querySelectorAll('main button')
         
         for (const button of buttons)
 	{
