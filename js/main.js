@@ -20,16 +20,17 @@
 
 function createSelectOptions(users){ 
     //returns undefined if no data parameter is provided. 
-    if(users === undefined || users  === null){ 
+    if(users === undefined || users  === null)
+    { 
         return undefined 
     } 
  
     // define an array 
     let optionArray = [] 
      
-    var user;
+    
     // for each user of users array 
-    for(user of users){ 
+    for(const user of users){ 
         // print user in console 
         console.log(user) 
         // create option  
@@ -59,12 +60,13 @@ function toggleCommentSection(postId) {
   
   if (!postId) 
   {
-                return undefined;
-            }
-  
+    return undefined;
+  } 
+    
     let section = document.querySelector(`section[data-post-id="${postId}"]`);
     // verify if section exist
-    if (section) {
+    if (section) 
+    {
         // toggle the class `hide` on the section element
         section.classList.toggle('hide');
     }
@@ -82,7 +84,7 @@ function toggleCommentButton(postId) {
     let allThebuttonsOnPage = document.querySelectorAll("button");
 
     // selected button with data-post-id attribute equal to the postId
-    let selectedButtonWithdataPstId;
+    let selectedButtonPstId;
 
     
     allThebuttonsOnPage.forEach((eachBtnOnPage) => {
@@ -90,32 +92,32 @@ function toggleCommentButton(postId) {
       if (eachBtnOnPage.dataset.postId == postId) 
       {
         
-        selectedButtonWithdataPstId = eachBtnOnPage;
+        selectedButtonPstId = eachBtnOnPage;
       }
     });
 
     
-    if (!selectedButtonWithdataPstId) 
+    if (!selectedButtonPstId) 
     {
       return null;
     }
 
     
-    if (selectedButtonWithdataPstId.textContent == "Show Comments") 
+    if (selectedButtonPstId.textContent == "Show Comments") 
     {
       
-      selectedButtonWithdataPstId.textContent = "Hide Comments";
+      selectedButtonPstId.textContent = "Hide Comments";
     }
 
     
-    else if (selectedButtonWithdataPstId.textContent == "Hide Comments")
+    else if (selectedButtonPstId.textContent == "Hide Comments")
      {
       
-      selectedButtonWithdataPstId.textContent = "Show Comments";
+      selectedButtonPstId.textContent = "Show Comments";
     }
 
     
-    return selectedButtonWithdataPstId;
+    return selectedButtonPstId;
   }
 }
 
@@ -147,7 +149,8 @@ return parentElement;
 function addButtonListeners() {
         const buttons = document.querySelectorAll('main button')
         
-        for (const button of buttons){
+        for (const button of buttons)
+        {
           const postId = button.dataset.postId;
           button.addEventListener("click", function (e) {toggleComments(e, postId)}, false);
         }
@@ -158,7 +161,8 @@ function addButtonListeners() {
 
 7. 
 
-function removeButtonListeners() {
+function removeButtonListeners()
+{
         const buttons = document.querySelectorAll('main button')
         
         for (const button of buttons){
@@ -172,7 +176,8 @@ function removeButtonListeners() {
 
 8.
 
-function createComments(comments){
+function createComments(comments)
+{
   if (!comments)
   {
     return undefined;
@@ -180,7 +185,8 @@ function createComments(comments){
   
   let fragment = document.createDocumentFragment();
   
-  for(const comment of comments){
+  for(const comment of comments)
+  {
     let Article = document.createElement("article");
     
     let h3 = createElemWithText('h3', comment.name);
@@ -203,7 +209,8 @@ function createComments(comments){
 
 9.
 
-function populateSelectMenu(users) {
+function populateSelectMenu(users) 
+{
   // If usersJSONdataAsprmtr parameter is received
   
   if (users) 
@@ -257,7 +264,8 @@ console.error(err);
 
 11.
 
-async function getUserPosts (userId){
+async function getUserPosts (userId)
+{
 
         // if userId has nothing
         if (!userId) 
@@ -283,7 +291,8 @@ async function getUserPosts (userId){
 
 12.
 
-async function getUser(userId){
+async function getUser(userId)
+{
 
         // if userId has nothing
         if (!userId) 
@@ -341,7 +350,8 @@ async function getPostComments(postID)
 
 14.
 
-async function displayComments(postId){
+async function displayComments(postId)
+{
   
   if(!postId)
   {
