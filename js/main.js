@@ -1,5 +1,5 @@
 1.
-  function createElemWithText(HTMLElemStrngToCrt = "p", txtContntOfElToCrt = "", classNameifOneNeeded) {
+  function createElemWithText(HTMLElemStrngToCrt = "p", txtContntOfElToCrt = "", className) {
   // Use document.createElement() to create the requested HTML element
   let requestedElementCreated = document.createElement(HTMLElemStrngToCrt);
 
@@ -7,9 +7,9 @@
   requestedElementCreated.textContent = txtContntOfElToCrt;
 
   // If class name is specified
-  if (classNameifOneNeeded) {
+  if (className) {
     // set the class of created element
-    requestedElementCreated.className = classNameifOneNeeded;
+    requestedElementCreated.className = className;
   }
 
   // return the created element
