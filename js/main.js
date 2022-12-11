@@ -145,9 +145,10 @@ return parentElement;
 6.
 
 function addButtonListeners() {
-        const buttons = document.querySelectorAll('main button')
+        const buttons = document.querySelectorAll('main')
         
-        for (const button of buttons){
+        for (const button of buttons)
+	{
           const postId = button.dataset.postId;
           button.addEventListener("click", function (e) {toggleComments(e, postId)}, false);
         }
