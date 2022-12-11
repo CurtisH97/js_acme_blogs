@@ -410,9 +410,7 @@ async function createPosts(posts)
 
 async function displayPosts(posts)
 {
-    if(!posts){
-	return createElemWithText("p", "main.default-text", classNameifOneNeeded);
-	}
+    
     
     let myMain = document.querySelector("main");
   
